@@ -1,1 +1,324 @@
+PLAN DE PRUEBAS FUNCIONALES
+PROYECTO: AGENDA PERSONAL DE CITAS
 
+1. INFORMACIÓN GENERAL
+
+Proyecto: Agenda Personal de Citas
+Versión: 2.0
+Responsable: Joan Alvarado
+Fecha: 18/11/2025
+
+2. ALCANCE DE LAS PRUEBAS
+
+Se realizarán pruebas funcionales sobre los módulos principales del sistema:
+- Gestión de citas (CRUD)
+- Validaciones
+- Recordatorios
+- Búsqueda
+
+3. CASOS DE PRUEBA
+
+CASO DE PRUEBA 01: CREAR CITA
+
+ID: CP-01
+Módulo: Gestión de Citas
+Prioridad: Alta
+Requerimiento: RF-01
+
+Precondiciones:
+- Usuario autenticado en el sistema
+- Calendario abierto
+
+Datos de Entrada:
+- Título: "Reunión con cliente"
+- Fecha: 20/11/2025
+- Hora: 10:00 AM
+- Duración: 1 hora
+- Descripción: "Presentación de proyecto"
+
+Pasos de Ejecución:
+1. Hacer clic en botón "Nueva Cita"
+2. Ingresar título "Reunión con cliente"
+3. Seleccionar fecha 20/11/2025
+4. Seleccionar hora 10:00 AM
+5. Ingresar duración 1 hora
+6. Ingresar descripción
+7. Hacer clic en "Guardar"
+
+Resultado Esperado:
+- La cita se crea exitosamente
+- Aparece mensaje "Cita creada correctamente"
+- La cita se muestra en el calendario
+- La cita aparece en la lista de citas
+
+Resultado Obtenido:
+- La cita se creó correctamente
+- Mensaje de confirmación mostrado
+- Cita visible en calendario y lista
+
+Estado: APROBADO
+Fecha de Ejecución: 18/11/2025
+Ejecutado por: Joan Alvarado
+
+---
+
+CASO DE PRUEBA 02: EDITAR CITA
+
+ID: CP-02
+Módulo: Gestión de Citas
+Prioridad: Alta
+Requerimiento: RF-02
+
+Precondiciones:
+- Usuario autenticado
+- Existe al menos una cita creada
+
+Datos de Entrada:
+- Cita existente: "Reunión con cliente"
+- Nuevo título: "Reunión con cliente - URGENTE"
+- Nueva hora: 11:00 AM
+
+Pasos de Ejecución:
+1. Seleccionar cita "Reunión con cliente"
+2. Hacer clic en botón "Editar"
+3. Modificar título agregando "- URGENTE"
+4. Cambiar hora a 11:00 AM
+5. Hacer clic en "Guardar cambios"
+
+Resultado Esperado:
+- La cita se actualiza correctamente
+- Mensaje "Cita actualizada correctamente"
+- Los cambios se reflejan en calendario
+- Los cambios se reflejan en la lista
+
+Resultado Obtenido:
+- Cita actualizada exitosamente
+- Mensaje de confirmación mostrado
+- Cambios visibles en todas las vistas
+
+Estado: APROBADO
+Fecha de Ejecución: 18/11/2025
+Ejecutado por: Joan Alvarado 
+
+---
+
+CASO DE PRUEBA 03: ELIMINAR CITA
+
+ID: CP-03
+Módulo: Gestión de Citas
+Prioridad: Alta
+Requerimiento: RF-03
+
+Precondiciones:
+- Usuario autenticado
+- Existe al menos una cita creada
+
+Datos de Entrada:
+- Cita a eliminar: "Reunión con cliente - URGENTE"
+
+Pasos de Ejecución:
+1. Seleccionar cita a eliminar
+2. Hacer clic en botón "Eliminar"
+3. Confirmar eliminación en diálogo emergente
+4. Hacer clic en "Sí, eliminar"
+
+Resultado Esperado:
+- Aparece diálogo de confirmación
+- Al confirmar, la cita se elimina
+- Mensaje "Cita eliminada correctamente"
+- La cita desaparece del calendario
+- La cita desaparece de la lista
+
+Resultado Obtenido:
+- Diálogo de confirmación mostrado
+- Cita eliminada exitosamente
+- Mensaje de confirmación mostrado
+- Cita removida de todas las vistas
+
+Estado: APROBADO
+Fecha de Ejecución: 18/11/2025
+Ejecutado por: Joan Alvarado
+
+---
+
+CASO DE PRUEBA 04: VALIDAR CONFLICTO DE HORARIOS
+
+ID: CP-04
+Módulo: Validaciones
+Prioridad: Alta
+Requerimiento: RF-07
+
+Precondiciones:
+- Usuario autenticado
+- Existe cita: "Reunión A" el 21/11/2025 a las 10:00 AM (1 hora)
+
+Datos de Entrada:
+- Nueva cita: "Reunión B"
+- Fecha: 21/11/2025
+- Hora: 10:30 AM (se superpone con Reunión A)
+- Duración: 1 hora
+
+Pasos de Ejecución:
+1. Hacer clic en "Nueva Cita"
+2. Ingresar título "Reunión B"
+3. Seleccionar fecha 21/11/2025
+4. Seleccionar hora 10:30 AM
+5. Hacer clic en "Guardar"
+
+Resultado Esperado:
+- El sistema detecta el conflicto
+- Aparece mensaje de advertencia: "Ya tienes una cita en ese horario"
+- La cita no se guarda hasta resolver el conflicto
+- Se ofrecen horarios alternativos
+
+Resultado Obtenido:
+- Conflicto detectado correctamente
+- Mensaje de advertencia mostrado
+- Cita no guardada
+- Sugerencias de horarios mostradas
+
+Estado: APROBADO
+Fecha de Ejecución: 18/11/2025
+Ejecutado por: Joan Alvarado
+
+---
+
+CASO DE PRUEBA 05: RECORDATORIO AUTOMÁTICO
+
+ID: CP-05
+Módulo: Notificaciones
+Prioridad: Alta
+Requerimiento: RF-09
+
+Precondiciones:
+- Usuario autenticado
+- Notificaciones habilitadas
+- Cita programada para dentro de 15 minutos
+
+Datos de Entrada:
+- Cita: "Llamada importante"
+- Hora: Hora actual + 15 minutos
+
+Pasos de Ejecución:
+1. Crear cita para dentro de 15 minutos
+2. Esperar 15 minutos
+3. Verificar recepción de notificación
+
+Resultado Esperado:
+- A los 15 minutos antes de la cita, llega notificación
+- Notificación muestra: título, hora y descripción
+- Notificación tiene botón "Ver detalles"
+- Notificación tiene botón "Posponer"
+
+Resultado Obtenido:
+- Notificación recibida exactamente 15 minutos antes
+- Información completa mostrada
+- Botones funcionales
+- Sonido de notificación reproducido
+
+Estado: APROBADO
+Fecha de Ejecución: 18/11/2025
+Ejecutado por: Joan Alvarado
+---
+
+CASO DE PRUEBA 06: BÚSQUEDA DE CITAS
+
+ID: CP-06
+Módulo: Búsqueda
+Prioridad: Media
+Requerimiento: RF-05
+
+Precondiciones:
+- Usuario autenticado
+- Existen múltiples citas creadas
+
+Datos de Entrada:
+- Término de búsqueda: "cliente"
+
+Pasos de Ejecución:
+1. Hacer clic en campo de búsqueda
+2. Ingresar texto "cliente"
+3. Presionar Enter o hacer clic en buscar
+
+Resultado Esperado:
+- Se muestran todas las citas que contienen "cliente" en título o descripción
+- Resultados se muestran en menos de 1 segundo
+- Se resalta el término buscado en los resultados
+- Se muestra cantidad de resultados encontrados
+
+Resultado Obtenido:
+- 3 citas encontradas con "cliente"
+- Resultados mostrados instantáneamente
+- Término resaltado en amarillo
+- Mensaje: "3 resultados encontrados"
+
+Estado: APROBADO
+Fecha de Ejecución: 18/11/2025
+Ejecutado por: Joan Alvarado
+
+---
+
+CASO DE PRUEBA 07: CREAR CITA RECURRENTE
+
+ID: CP-07
+Módulo: Gestión de Citas
+Prioridad: Alta
+Requerimiento: RF-10
+
+Precondiciones:
+- Usuario autenticado
+
+Datos de Entrada:
+- Título: "Reunión semanal de equipo"
+- Fecha inicio: 20/11/2025
+- Hora: 09:00 AM
+- Recurrencia: Semanal (cada lunes)
+- Repetir: 4 veces
+
+Pasos de Ejecución:
+1. Hacer clic en "Nueva Cita"
+2. Ingresar título
+3. Seleccionar fecha y hora
+4. Marcar checkbox "Cita recurrente"
+5. Seleccionar "Semanal"
+6. Ingresar "4" repeticiones
+7. Hacer clic en "Guardar"
+
+Resultado Esperado:
+- Se crean 4 citas automáticamente
+- Citas aparecen en: 20/11, 27/11, 04/12, 11/12
+- Todas a las 09:00 AM
+- Mensaje: "4 citas recurrentes creadas"
+- Ícono de recurrencia visible en cada cita
+
+Resultado Obtenido:
+- 4 citas creadas correctamente
+- Fechas correctas (cada lunes)
+- Hora correcta en todas
+- Mensaje de confirmación mostrado
+- Ícono de recurrencia visible
+
+Estado: APROBADO
+Fecha de Ejecución: 18/11/2025
+Ejecutado por: Joan Alvarado
+
+4. RESUMEN DE RESULTADOS
+
+Total de casos de prueba: 7
+Casos aprobados: 7
+Casos rechazados: 0
+Porcentaje de éxito: 100%
+
+5. CONCLUSIONES
+
+Todas las funcionalidades principales del sistema han sido probadas exitosamente. El sistema cumple con los requerimientos funcionales establecidos y está listo para la siguiente fase.
+
+6. RECOMENDACIONES
+
+- Realizar pruebas de carga con múltiples usuarios
+- Probar en diferentes dispositivos y navegadores
+- Realizar pruebas de usabilidad con usuarios reales
+- Implementar pruebas automatizadas para regresión
+
+Elaborado por: Joan Alvarado
+Fecha: 18/11/2025
