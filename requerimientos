@@ -1,126 +1,87 @@
-DOCUMENTO DE ESPECIFICACIÓN DE REQUERIMIENTOS DE SOFTWARE (DRS) 
-VERSIÓN 1.0
+REQUERIMIENTOS FUNCIONALES (RF)
+Los requerimientos funcionales describen las acciones o funciones específicas que el sistema debe poder realizar para satisfacer las necesidades del usuario.
 
-PROYECTO: AGENDA PERSONAL DE CITAS
+1. Requerimiento Funcional
 
-1. INTRODUCCIÓN.
 
-1.1 Propósito
-Este documento describe los requerimientos funcionales y no funcionales para el sistema de Agenda Personal de Citas versión 1.0.
+RF1 Creación de Citas: 
+El sistema debe permitir que el usuario cree una nueva cita, incluyendo campos para la fecha, hora, descripción/motivo, datos personales y lugar.
 
-1.2 Alcance
-Sistema de gestión de citas personales que permite crear, editar, eliminar y visualizar compromisos.
+Prioridad Alta
 
-1.3 Definiciones
-- Cita: Compromiso programado con fecha, hora y descripción
-- Usuario: Persona que utiliza la aplicación
-- CRUD: Crear, Leer, Actualizar, Eliminar
 
-2. REQUERIMIENTOS FUNCIONALES
+RF2 Visualización de Calendario: 
+El sistema debe mostrar al usuario una vista de calendario (diaria, semanal y mensual) con las citas programadas.
 
-RF-01: Crear Cita
-Descripción: El sistema debe permitir al usuario crear una nueva cita ingresando título, fecha, hora, duración y descripción.
-Prioridad: Alta
-Estado: Aprobado
+Prioridad Alta
 
-RF-02: Editar Cita
-Descripción: El sistema debe permitir modificar cualquier campo de una cita existente.
-Prioridad: Alta
-Estado: Aprobado
 
-RF-03: Eliminar Cita
-Descripción: El sistema debe permitir eliminar una cita con confirmación previa.
-Prioridad: Alta
-Estado: Aprobado
+RF3 Edición y Eliminación: 
+El sistema debe permitir que el usuario pueda modificar cualquier detalle de una cita existente o eliminarla por completo.
 
-RF-04: Visualizar Citas
-Descripción: El sistema debe mostrar las citas en vista de lista ordenadas cronológicamente.
-Prioridad: Alta
-Estado: Aprobado
+Prioridad Alta
 
-RF-05: Buscar Citas
-Descripción: El sistema debe permitir buscar citas por título, fecha o descripción.
-Prioridad: Media
-Estado: Aprobado
 
-RF-06: Vista de Calendario
-Descripción: El sistema debe ofrecer vista mensual de calendario con las citas.
-Prioridad: Media
-Estado: Aprobado
+RF4 Configuración de Recordatorio: 
+El sistema debe permitir que el usuario permita configurar un recordatorio (notificación o alarma) en un tiempo predeterminado antes de la cita (Ej. 15 minutos o 1 hora antes).
 
-RF-07: Validar Conflictos
-Descripción: El sistema debe alertar cuando se intente crear una cita que se superpone con otra existente.
-Prioridad: Media
-Estado: Aprobado
+Prioridad Alta
 
-RF-08: Categorizar Citas
-Descripción: El sistema debe permitir asignar categorías (trabajo, personal, salud, etc.) a las citas.
-Prioridad: Baja
-Estado: Aprobado
 
-3. REQUERIMIENTOS NO FUNCIONALES
+RF5 Búsqueda y Filtro: 
+El sistema debe permitir que el usuario busque citas por palabras claves en la descripción o filtrar citas por contacto y rango de fechas.
 
-RNF-01: Usabilidad
-Descripción: La interfaz debe ser intuitiva y permitir crear una cita en menos de 3 clics.
-Prioridad: Alta
+Prioridad Media
 
-RNF-02: Rendimiento
-Descripción: El sistema debe cargar la lista de citas en menos de 2 segundos.
-Prioridad: Alta
 
-RNF-03: Disponibilidad
-Descripción: El sistema debe estar disponible 99% del tiempo.
-Prioridad: Media
+2. REQUERIMIENTOS NO FUNCIONALES (RNF)
 
-RNF-04: Seguridad
-Descripción: Los datos del usuario deben estar protegidos con encriptación.
-Prioridad: Alta
+Los requerimientos no funcionales describen cualidades, restricciones o características de rendimiento que debe tener el sistema.
 
-RNF-05: Compatibilidad
-Descripción: El sistema debe funcionar en navegadores Chrome, Firefox y Safari.
-Prioridad: Media
 
-RNF-06: Escalabilidad
-Descripción: El sistema debe soportar hasta 10,000 citas por usuario.
-Prioridad: Media
 
-RNF-07: Mantenibilidad
-Descripción: El código debe estar documentado y seguir estándares de programación.
-Prioridad: Media
+Requerimiento No Funcional
 
-4. RESTRICCIONES
 
-- Desarrollo en 3 meses
-- Presupuesto limitado
-- Equipo de 2 desarrolladores
 
-5. APROBACIONES
+RNF1 Portabilidad: 
+La aplicación debe ser compatible y funcionar correctamente en cualquier dispositivo (iOS y Android) y navegador web.
+
+Prioridad Alta
+
+
+RNF2 Rendimiento de Carga: 
+La vista semanal del calendario (con hasta 50 citas) no debe tardar más de 2 segundos en cargarse completamente para volver a utilizarlo.
+
+Prioridad Alta
+
+
+RNF3 Seguridad de Datos: 
+Las citas y los datos personales del usuario deben estar cifrados y protegidos mediante el inicio de sesión seguro (usuario y contraseña).
+
+Prioridad Alta
+
+
+4. CRITERIOS DE ACEPTACIÓN
+
+Estos son los puntos clave que se revisarán para garantizar que la Agenda Personal de Citas cumpla con su objetivo.
+
+Gestión Completa de Citas (Basado en RF1 y RF2): El usuario podrá crear una cita, editar todos sus campos y eliminar una cita. Al eliminarla, debe desaparecer de todas las vistas del calendario.
+
+Velocidad de Sincronización (Basado en RF4): Si el usuario crea una cita en el móvil y la quiere visualizar en la versión web, la cita debe de aparecer en el navegador en un tiempo no mayor a 3 segundos.
+
+Acceso Único (Basado en RNF3): Solo el usuario con las credenciales correctas debe poder acceder a la agenda y a la configuración de citas. Si se intenta acceder con credenciales incorrectas, el acceso debe ser bloqueado.
+
+5. CONTROL Y APROBACIONES
 
 Elaborado por: Joan Alvarado
+
 Fecha: 18/11/2025
+
 Versión: 1.0
-
-DOCUMENTO DE ESPECIFICACIÓN DE REQUERIMIENTOS DE SOFTWARE (DRS)
-VERSIÓN 2.0
-
-PROYECTO: AGENDA PERSONAL DE CITAS
-
-CONTROL DE CAMBIOS:
-- Versión 2.0: Agregados 6 requerimientos funcionales nuevos
-- Fecha: 18/11/2025
-- Modificado por: Joan Alvarado 
-
-1. INTRODUCCIÓN
-
-1.1 Propósito
-Este documento describe los requerimientos funcionales y no funcionales para el sistema de Agenda Personal de Citas versión 2.0, incluyendo mejoras basadas en feedback de usuarios.
-
-1.2 Alcance
-Sistema avanzado de gestión de citas con recordatorios automáticos, sincronización en la nube y funciones colaborativas.
 
 2. REQUERIMIENTOS FUNCIONALES
 
-[RF-01 a RF-08: Mantienen la misma descripción de V1.0]
 
 RF-09: Recordatorios Automáticos (NUEVO)
 Descripción: El sistema debe enviar notificaciones automáticas 15 minutos antes de cada cita.
