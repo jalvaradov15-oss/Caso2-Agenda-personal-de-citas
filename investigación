@@ -1,1 +1,30 @@
+# ¿Qué es Markdown y por qué se usa en proyectos de software?
 
+**Markdown** es un tipo de **lenguaje de marcado sencillo** que se utiliza para dar formato a textos usando símbolos comunes (como `#`, `*`, `>`). Su objetivo es que los textos sean fáciles de leer y escribir, sin depender de herramientas especiales, y que puedan convertirse rápidamente a **HTML** u otros formatos cuando se necesite.
+
+En los **proyectos de software**, Markdown se usa sobre todo para crear documentación, como archivos `README.md`, guías de instalación o manuales, porque:
+* Permite añadir encabezados, listas, enlaces, imágenes y fragmentos de código fácilmente.
+* Funciona en la mayoría de las **plataformas colaborativas** (como **GitHub**, **GitLab** o **Bitbucket**).
+* Ayuda a que tanto los programadores como los usuarios **comprendan mejor la información**.
+
+---
+
+## Ventajas de usar Markdown junto con GitHub
+
+1.  **Compatibilidad directa:
+** GitHub reconoce los archivos `.md` y muestra su contenido con formato (**negritas**, **listas**, **enlaces**, etc.) sin necesidad de programas externos.
+
+2.  **Documentación clara:
+**Se pueden crear archivos como `README.md` o `CONTRIBUTING.md` que explican la finalidad del proyecto, cómo usarlo o cómo colaborar.
+
+3.  **Colaboración práctica:
+** Los miembros del equipo pueden editar y revisar documentos directamente desde GitHub sin complicaciones.
+
+4.  **Visualización en línea:
+** Markdown se ve correctamente tanto en la web como en editores de texto.
+
+5.  **Fácil mantenimiento:
+** Al ser texto plano, se puede actualizar y versionar fácilmente junto al código.
+
+6.  **Presentación profesional:
+** Hace que los proyectos se vean más ordenados y atractivos, facilitando la comprensión a otros colaboradores o usuarios.
